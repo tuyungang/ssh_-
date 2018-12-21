@@ -1,0 +1,9 @@
+test: test.o
+	g++ -g  test.o -o test -L/usr/lib64 -lssl -lcrypto -I/usr/local/ssl/include -ldl
+test.o: test.cpp
+	g++ -g -c test.cpp -I/usr/local/ssl/include
+clean:
+	@echo "make clean"
+	-rm test*.o
+	@echo "clean completed"
+.PYONE:clean
